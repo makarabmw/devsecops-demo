@@ -6,7 +6,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# Production stage
+# Production stage 
 FROM nginx:1-alpine-slim
 COPY --from=build /app/dist /usr/share/nginx/html
 # Add nginx configuration if needed
